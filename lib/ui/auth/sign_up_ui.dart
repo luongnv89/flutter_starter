@@ -57,6 +57,18 @@ class SignUpUI extends StatelessWidget {
                     maxLines: 1,
                   ),
                   FormVerticalSpace(),
+                  FormInputFieldWithIcon(
+                    controller: authController.organisationController,
+                    iconPrefix: Icons.home,
+                    labelText: 'auth.organisationFormField'.tr,
+                    validator: Validator().name,
+                    obscureText: true,
+                    onChanged: (value) => null,
+                    onSaved: (value) =>
+                        authController.organisationController.text = value!,
+                    maxLines: 1,
+                  ),
+                  FormVerticalSpace(),
                   PrimaryButton(
                       labelText: 'auth.signUpButton'.tr,
                       onPressed: () async {

@@ -15,6 +15,7 @@ class AuthController extends GetxController {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController organisationController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _db = FirebaseFirestore.instance;
   Rxn<User> firebaseUser = Rxn<User>();
@@ -36,6 +37,7 @@ class AuthController extends GetxController {
     nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    organisationController.dispose();
     super.onClose();
   }
 
@@ -119,6 +121,7 @@ class AuthController extends GetxController {
             uid: result.user!.uid,
             email: result.user!.email!,
             name: nameController.text,
+            organisation: organisationController.text,
             photoUrl: gravatarUrl);
         //create the user in firestore
         _createUserFirestore(_newUser, result.user!);
@@ -159,7 +162,6 @@ class AuthController extends GetxController {
           _authUpdateUserNoticeTitle = 'auth.updateUserEmailInUse'.tr;
           _authUpdateUserNotice = 'auth.updateUserEmailInUse'.tr;
         } else {
-          
           _authUpdateUserNoticeTitle = 'auth.wrongPasswordNotice'.tr;
           _authUpdateUserNotice = 'auth.wrongPasswordNotice'.tr;
         }
@@ -245,6 +247,7 @@ class AuthController extends GetxController {
     nameController.clear();
     emailController.clear();
     passwordController.clear();
+    organisationController.clear();
     return _auth.signOut();
   }
 }

@@ -52,6 +52,16 @@ class UpdateProfileUI extends StatelessWidget {
                         authController.emailController.text = value!,
                   ),
                   FormVerticalSpace(),
+                  FormInputFieldWithIcon(
+                    controller: authController.organisationController,
+                    iconPrefix: Icons.home,
+                    labelText: 'auth.organisationFormField'.tr,
+                    validator: Validator().name,
+                    onChanged: (value) => null,
+                    onSaved: (value) =>
+                        authController.nameController.text = value!,
+                  ),
+                  FormVerticalSpace(),
                   PrimaryButton(
                       labelText: 'auth.updateUser'.tr,
                       onPressed: () async {
@@ -61,6 +71,8 @@ class UpdateProfileUI extends StatelessWidget {
                           UserModel _updatedUser = UserModel(
                               uid: authController.firestoreUser.value!.uid,
                               name: authController.nameController.text,
+                              organisation:
+                                  authController.organisationController.text,
                               email: authController.emailController.text,
                               photoUrl:
                                   authController.firestoreUser.value!.photoUrl);

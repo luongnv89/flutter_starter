@@ -27,14 +27,16 @@ class MyApp extends StatelessWidget {
       builder: (languageController) => Loading(
         child: GetMaterialApp(
           translations: Localization(),
+          // defaultTransition: Transition.fadeIn,
+          // transitionDuration: Duration(milliseconds: 500),
           locale: languageController.getLocale, // <- Current locale
           navigatorObservers: [
             // FirebaseAnalyticsObserver(analytics: FirebaseAnalytics()),
           ],
           debugShowCheckedModeBanner: false,
-          //defaultTransition: Transition.fade,
-          theme: AppThemes.lightTheme,
-          darkTheme: AppThemes.darkTheme,
+          defaultTransition: Transition.fade,
+          theme: ThemeData.light(),
+          darkTheme: ThemeData.dark(),
           themeMode: ThemeMode.system,
           initialRoute: "/",
           getPages: AppRoutes.routes,

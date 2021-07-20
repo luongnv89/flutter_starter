@@ -18,10 +18,13 @@ class HomeUI extends StatelessWidget {
                 title: Text('home.title'.tr),
                 actions: [
                   IconButton(
-                      icon: Icon(Icons.settings),
-                      onPressed: () {
-                        Get.to(SettingsUI());
-                      }),
+                    icon: Icon(Icons.settings),
+                    onPressed: () {
+                      Get.to(
+                        SettingsUI(),
+                      );
+                    },
+                  ),
                 ],
               ),
               body: Center(
@@ -35,28 +38,39 @@ class HomeUI extends StatelessWidget {
                       children: <Widget>[
                         FormVerticalSpace(),
                         Text(
-                            'home.uidLabel'.tr +
-                                ': ' +
-                                controller.firestoreUser.value!.uid,
-                            style: TextStyle(fontSize: 16)),
+                          'home.uidLabel'.tr +
+                              ': ' +
+                              controller.firestoreUser.value!.uid,
+                          style: TextStyle(fontSize: 16),
+                        ),
                         FormVerticalSpace(),
                         Text(
-                            'home.nameLabel'.tr +
-                                ': ' +
-                                controller.firestoreUser.value!.name,
-                            style: TextStyle(fontSize: 16)),
+                          'home.nameLabel'.tr +
+                              ': ' +
+                              controller.firestoreUser.value!.name,
+                          style: TextStyle(fontSize: 16),
+                        ),
                         FormVerticalSpace(),
                         Text(
-                            'home.emailLabel'.tr +
-                                ': ' +
-                                controller.firestoreUser.value!.email,
-                            style: TextStyle(fontSize: 16)),
+                          'home.emailLabel'.tr +
+                              ': ' +
+                              controller.firestoreUser.value!.email,
+                          style: TextStyle(fontSize: 16),
+                        ),
                         FormVerticalSpace(),
                         Text(
-                            'home.adminUserLabel'.tr +
-                                ': ' +
-                                controller.admin.value.toString(),
-                            style: TextStyle(fontSize: 16)),
+                          'home.adminUserLabel'.tr +
+                              ': ' +
+                              controller.admin.value.toString(),
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        FormVerticalSpace(),
+                        Text(
+                          'home.organisationLabel'.tr +
+                              ': ' +
+                              controller.firestoreUser.value!.organisation,
+                          style: TextStyle(fontSize: 16),
+                        ),
                       ],
                     ),
                   ],
