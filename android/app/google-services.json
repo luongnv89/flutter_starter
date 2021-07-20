@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "524197078337",
-    "firebase_url": "https://flutter-starter-delay.firebaseio.com",
-    "project_id": "flutter-starter-delay",
-    "storage_bucket": "flutter-starter-delay.appspot.com"
+    "project_number": "715094039978",
+    "project_id": "flutter-dev-20291",
+    "storage_bucket": "flutter-dev-20291.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:524197078337:android:dee32de1a467249cfa2dc0",
+        "mobilesdk_app_id": "1:715094039978:android:436192182198a854975fd3",
         "android_client_info": {
-          "package_name": "com.tapmode.flutterstarter"
+          "package_name": "com.montimage.cyberrange"
         }
       },
       "oauth_client": [
         {
-          "client_id": "524197078337-5gq7dldnk4tt8q4cvtenbn08q5fn4vkj.apps.googleusercontent.com",
+          "client_id": "715094039978-e71ghr164fl85vf4b100chkb56ht6rqt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.montimage.cyberrange",
+            "certificate_hash": "e88c8083d76ccf5adf5f07cac3e3ca0b21fccf21"
+          }
+        },
+        {
+          "client_id": "715094039978-lakrdkobhvb4tbqq192uhioriqumcb1m.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCHe-BxbY8-_CWhZZRC5jqVY4c0ydUGw08"
+          "current_key": "AIzaSyD5BFEVsfDkRTVoeU6k1p6Xs2L8hBvVi3I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "524197078337-5gq7dldnk4tt8q4cvtenbn08q5fn4vkj.apps.googleusercontent.com",
+              "client_id": "715094039978-lakrdkobhvb4tbqq192uhioriqumcb1m.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "524197078337-96irqf3smo96s6f48mc1neh2vh7jber5.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.tapmode.flutter-starter"
-              }
             }
           ]
         }
