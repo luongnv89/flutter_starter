@@ -14,18 +14,43 @@ class HomeUI extends StatelessWidget {
               child: CircularProgressIndicator(),
             )
           : Scaffold(
+              drawer: Drawer(
+                child: Container(
+                  margin: EdgeInsets.all(20),
+                  child: ListView(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Get.to(() => SettingsUI());
+                        },
+                        child: Text(
+                          'settings.title'.tr,
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          AuthController.to.signOut();
+                        },
+                        child: Text(
+                          'settings.signOut'.tr,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               appBar: AppBar(
                 title: Text('home.title'.tr),
-                actions: [
-                  IconButton(
-                    icon: Icon(Icons.settings),
-                    onPressed: () {
-                      Get.to(
-                        SettingsUI(),
-                      );
-                    },
-                  ),
-                ],
+                // actions: [
+                //   IconButton(
+                //     icon: Icon(Icons.settings),
+                //     onPressed: () {
+                //       Get.to(
+                //         () => SettingsUI(),
+                //       );
+                //     },
+                //   ),
+                // ],
               ),
               body: Center(
                 child: Column(
