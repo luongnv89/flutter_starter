@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_starter/ui/auth/reset_password_confirmed_ui.dart';
 import 'package:get/get.dart';
 import 'package:flutter_starter/ui/auth/auth.dart';
 import 'package:flutter_starter/ui/components/components.dart';
@@ -24,7 +25,13 @@ class ResetPasswordUI extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   LogoGraphicHeader(),
-                  SizedBox(height: 48.0),
+                  SizedBox(height: 20.0),
+                  Text(
+                    "auth.resetPasswordMessage".tr,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  FormVerticalSpace(),
                   FormInputFieldWithIcon(
                     controller: authController.emailController,
                     iconPrefix: Icons.email,
@@ -41,10 +48,13 @@ class ResetPasswordUI extends StatelessWidget {
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           await authController.sendPasswordResetEmail(context);
+                          Get.offAll(() => ResetPasswordConfirmedUI(),
+                              arguments: authController.emailController.text);
                         }
                       }),
                   FormVerticalSpace(),
                   signInLink(context),
+                  signUpLink(context),
                 ],
               ),
             ),
@@ -55,17 +65,27 @@ class ResetPasswordUI extends StatelessWidget {
   }
 
   appBar(BuildContext context) {
-    if (authController.emailController.text == '') {
-      return null;
-    }
+    // if (authController.emailController.text == '') {
+    //   return null;
+    // }
     return AppBar(title: Text('auth.resetPasswordTitle'.tr));
   }
 
   signInLink(BuildContext context) {
-    if (authController.emailController.text == '') {
+    if (authController.nameController.text == '') {
       return LabelButton(
         labelText: 'auth.signInonResetPasswordLabelButton'.tr,
         onPressed: () => Get.offAll(() => SignInUI()),
+      );
+    }
+    return Container(width: 0, height: 0);
+  }
+
+  signUpLink(BuildContext context) {
+    if (authController.nameController.text == '') {
+      return LabelButton(
+        labelText: 'auth.signUpLabelButton'.tr,
+        onPressed: () => Get.to(() => SignUpUI()),
       );
     }
     return Container(width: 0, height: 0);

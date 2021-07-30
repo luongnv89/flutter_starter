@@ -15,6 +15,7 @@ class AuthController extends GetxController {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordConfirmedController = TextEditingController();
   TextEditingController organisationController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -37,6 +38,7 @@ class AuthController extends GetxController {
     nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    passwordConfirmedController.dispose();
     organisationController.dispose();
     super.onClose();
   }
@@ -127,6 +129,7 @@ class AuthController extends GetxController {
         _createUserFirestore(_newUser, result.user!);
         emailController.clear();
         passwordController.clear();
+        passwordConfirmedController.clear();
         hideLoadingIndicator();
       });
     } on FirebaseAuthException catch (error) {
@@ -247,6 +250,7 @@ class AuthController extends GetxController {
     nameController.clear();
     emailController.clear();
     passwordController.clear();
+    passwordConfirmedController.clear();
     organisationController.clear();
     return _auth.signOut();
   }

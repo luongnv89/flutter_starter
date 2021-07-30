@@ -17,6 +17,8 @@ class UpdateProfileUI extends StatelessWidget {
         authController.firestoreUser.value!.name;
     authController.emailController.text =
         authController.firestoreUser.value!.email;
+    authController.organisationController.text =
+        authController.firestoreUser.value!.organisation;
     return Scaffold(
       appBar: AppBar(title: Text('auth.updateProfileTitle'.tr)),
       body: Form(
@@ -30,7 +32,7 @@ class UpdateProfileUI extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   LogoGraphicHeader(),
-                  SizedBox(height: 48.0),
+                  SizedBox(height: 20.0),
                   FormInputFieldWithIcon(
                     controller: authController.nameController,
                     iconPrefix: Icons.person,
@@ -59,7 +61,7 @@ class UpdateProfileUI extends StatelessWidget {
                     validator: Validator().name,
                     onChanged: (value) => null,
                     onSaved: (value) =>
-                        authController.nameController.text = value!,
+                        authController.organisationController.text = value!,
                   ),
                   FormVerticalSpace(),
                   PrimaryButton(
@@ -80,11 +82,11 @@ class UpdateProfileUI extends StatelessWidget {
                               authController.firestoreUser.value!.email);
                         }
                       }),
-                  FormVerticalSpace(),
-                  LabelButton(
-                    labelText: 'auth.resetPasswordLabelButton'.tr,
-                    onPressed: () => Get.to(() => ResetPasswordUI()),
-                  ),
+                  // FormVerticalSpace(),
+                  // LabelButton(
+                  //   labelText: 'auth.resetPasswordLabelButton'.tr,
+                  //   onPressed: () => Get.to(() => ResetPasswordUI()),
+                  // ),
                 ],
               ),
             ),

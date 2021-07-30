@@ -1,3 +1,3 @@
-export 'home_ui.dart';
-export 'settings_ui.dart';
-export 'splash_ui.dart';
+export 'pages/homePage.dart';
+export 'pages/settingsPage.dart';
+export 'pages/splashPage.dart';

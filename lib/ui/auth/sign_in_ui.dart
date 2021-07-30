@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_starter/constants/globals.dart';
 
 import 'dart:core';
 import 'package:get/get.dart';
@@ -11,6 +12,22 @@ import 'package:flutter_starter/controllers/controllers.dart';
 class SignInUI extends StatelessWidget {
   final AuthController authController = AuthController.to;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  languageListTile(BuildContext context) {
+    return GetBuilder<LanguageController>(
+      builder: (controller) => Container(
+        alignment: Alignment.center,
+        child: DropdownPicker(
+          menuOptions: Globals.languageOptions,
+          selectedOption: controller.currentLanguage,
+          onChanged: (value) async {
+            await controller.updateLanguage(value!);
+            Get.forceAppUpdate();
+          },
+        ),
+      ),
+    );
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +42,7 @@ class SignInUI extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   LogoGraphicHeader(),
-                  SizedBox(height: 48.0),
+                  SizedBox(height: 20.0),
                   FormInputFieldWithIcon(
                     controller: authController.emailController,
                     iconPrefix: Icons.email,
@@ -65,6 +82,7 @@ class SignInUI extends StatelessWidget {
                     labelText: 'auth.signUpLabelButton'.tr,
                     onPressed: () => Get.to(() => SignUpUI()),
                   ),
+                  languageListTile(context),
                 ],
               ),
             ),

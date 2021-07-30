@@ -7,9 +7,9 @@ class LogoGraphicHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String _imageLogo = 'assets/images/default.png';
+    String _imageLogo = 'assets/images/montimage.png';
     if (themeController.isDarkModeOn == true) {
-      _imageLogo = 'assets/images/defaultDark.png';
+      _imageLogo = 'assets/images/montimage.png';
     }
     return Hero(
       tag: 'App Logo',

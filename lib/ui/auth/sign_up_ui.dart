@@ -12,6 +12,9 @@ class SignUpUI extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(""),
+      ),
       body: Form(
         key: _formKey,
         child: Padding(
@@ -23,7 +26,7 @@ class SignUpUI extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   LogoGraphicHeader(),
-                  SizedBox(height: 48.0),
+                  SizedBox(height: 20.0),
                   FormInputFieldWithIcon(
                     controller: authController.nameController,
                     iconPrefix: Icons.person,
@@ -57,12 +60,36 @@ class SignUpUI extends StatelessWidget {
                     maxLines: 1,
                   ),
                   FormVerticalSpace(),
+                  // FormInputFieldWithIcon(
+                  //   controller: authController.passwordConfirmedController,
+                  //   iconPrefix: Icons.lock,
+                  //   labelText: 'auth.passwordConfirmedFormField'.tr,
+                  //   validator: Validator().passwordConfirmed(
+                  //       authController.passwordConfirmedController.text,
+                  //       authController.passwordController.text),
+                  //   obscureText: true,
+                  //   onChanged: (value) => null,
+                  //   onSaved: (value) => {
+                  //     if (authController.passwordController.text != value)
+                  //       {
+                  //         Get.snackbar("Unmatched Password",
+                  //             "The confirmed password does not match")
+                  //       }
+                  //     else
+                  //       {
+                  //         authController.passwordConfirmedController.text =
+                  //             value!
+                  //       }
+                  //   },
+                  //   maxLines: 1,
+                  // ),
+                  // FormVerticalSpace(),
                   FormInputFieldWithIcon(
                     controller: authController.organisationController,
                     iconPrefix: Icons.home,
                     labelText: 'auth.organisationFormField'.tr,
                     validator: Validator().name,
-                    obscureText: true,
+                    // obscureText: true,
                     onChanged: (value) => null,
                     onSaved: (value) =>
                         authController.organisationController.text = value!,

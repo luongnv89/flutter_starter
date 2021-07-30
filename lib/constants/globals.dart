@@ -17,7 +17,7 @@ class Globals {
     MenuOptionsModel(key: "nl", value: "Nederlands"), //Dutch
     MenuOptionsModel(key: "ro", value: "Română"), //Romanian
     MenuOptionsModel(key: "ja", value: "日本語"), //Japanese
-    MenuOptionsModel(key: "zh", value: "中文"), //Chinese
+    MenuOptionsModel(key: "it", value: "Italiano"), //Chinese
     MenuOptionsModel(key: "vi", value: "Tiếng Việt"), //Vietnamese
   ];
 }

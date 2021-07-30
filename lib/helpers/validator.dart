@@ -13,6 +13,13 @@ class Validator {
       return null;
   }
 
+  // String? passwordConfirmed(String? value, String? pwd) {
+  //   if (value != pwd)
+  //     return 'validator.passwordConfirmed'.tr;
+  //   else
+  //     return null;
+  // }
+
   String? password(String? value) {
     String pattern = r'^.{6,}$';
     RegExp regex = RegExp(pattern);
